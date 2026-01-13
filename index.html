@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSaúde Formações | Formação Continuada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Adicionando FontAwesome para ícones mais bonitos que SVGs brutos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos personalizados simples */
+        .hero-bg {
+            background-color: #1e3a8a; /* Azul escuro corporativo */
+            /* Imagem de fundo ilustrativa de reunião/formação */
+            background-image: linear-gradient(rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.8)), url('https://images.unsplash.com/photo-1544531320-94e967444260?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- HEADER / NAV -->
+    <header class="bg-white shadow-md fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                    E
+                </div>
+                <div class="text-2xl font-bold text-blue-900 tracking-tight">EduSaúde<span class="text-blue-500">.</span></div>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-blue-900 text-2xl" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#sobre" class="text-gray-600 hover:text-blue-600 font-medium transition">Sobre</a>
+                <a href="#servicos" class="text-gray-600 hover:text-blue-600 font-medium transition">Soluções</a>
+                <a href="#equipe" class="text-gray-600 hover:text-blue-600 font-medium transition">Equipe</a>
+                <a href="#contato" class="px-5 py-2.5 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 hover:shadow-lg transition transform hover:-translate-y-0.5">
+                    Solicitar Proposta
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="#sobre" class="text-gray-600 hover:text-blue-600">Sobre</a>
+                <a href="#servicos" class="text-gray-600 hover:text-blue-600">Soluções</a>
+                <a href="#equipe" class="text-gray-600 hover:text-blue-600">Equipe</a>
+                <a href="#contato" class="text-blue-600 font-bold">Solicitar Proposta</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-bg text-white min-h-screen flex items-center pt-20 relative">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="z-10 animate-fade-in-up">
+                <div class="inline-block px-3 py-1 bg-blue-500 bg-opacity-30 rounded-full text-blue-100 text-sm font-semibold mb-6 border border-blue-400 border-opacity-30">
+                    Especialistas em Gestão Pública e Privada
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Formação Continuada de <span class="text-blue-300">Alto Impacto</span> para Educação e Saúde
+                </h1>
+                <p class="text-lg md:text-xl mb-8 text-gray-200 leading-relaxed max-w-lg">
+                    Capacitação técnica especializada para municípios e instituições. 
+                    Metodologias ativas, inclusão e gestão eficiente com certificação reconhecida.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contato" class="px-8 py-4 bg-blue-500 text-white font-bold rounded-lg shadow-lg hover:bg-blue-600 transition text-center flex items-center justify-center gap-2">
+                        <span>Falar com Consultor</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#servicos" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blue-900 transition text-center">
+                        Ver Áreas de Atuação
+                    </a>
+                </div>
+                
+                <div class="mt-12 flex items-center gap-8 text-sm text-gray-300">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-400"></i>
+                        <span>Certificação Válida</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-green-400"></i>
+                        <span>Metodologia BNCC/SUS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Image/Graphic (Optional visual element) -->
+            <div class="hidden md:block relative z-0 opacity-90">
+               <!-- Placeholder for graphic/3d element if needed, kept clean for now -->
+            </div>
+        </div>
+        
+        <!-- Curve Divider at bottom -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180">
+            <svg class="relative block w-[calc(100%+1.3px)] h-[60px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-white"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- SOBRE / CREDIBILIDADE -->
+    <section id="sobre" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-full z-0"></div>
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-yellow-50 rounded-full z-0"></div>
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Equipe em treinamento" class="relative z-10 rounded-2xl shadow-2xl w-full object-cover h-[400px]">
+                    
+                    <!-- Stats Card -->
+                    <div class="absolute bottom-8 left-8 z-20 bg-white p-6 rounded-lg shadow-xl border-l-4 border-blue-600 max-w-xs">
+                        <p class="text-3xl font-bold text-blue-900 mb-1">+5.000</p>
+                        <p class="text-sm text-gray-600">Profissionais capacitados no último ano em todo o estado.</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2">Sobre Nós</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">Por que escolher a EduSaúde?</h2>
+                    <p class="mb-6 leading-relaxed text-gray-600 text-lg">
+                        Somos especialistas em transformar a realidade do serviço público e privado através do conhecimento. 
+                        Nossa abordagem une teoria acadêmica rigorosa com a prática do dia a dia nas escolas e unidades de saúde.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mt-1">
+                                <i class="fas fa-book-reader text-green-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-gray-800">Metodologias Ativas</h3>
+                                <p class="text-gray-600 text-sm">Alinhadas à BNCC e diretrizes do SUS, focando na resolução de problemas reais.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mt-1">
+                                <i class="fas fa-user-graduate text-blue-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-gray-800">Equipe de Mestre e Doutores</h3>
+                                <p class="text-gray-600 text-sm">Corpo técnico com vivência acadêmica e prática de mercado.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mt-1">
+                                <i class="fas fa-certificate text-purple-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-bold text-gray-800">Certificação Reconhecida</h3>
+                                <p class="text-gray-600 text-sm">Cursos válidos para progressão de carreira e provas de títulos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-24 bg-gray-50 relative overflow-hidden">
+        <!-- Background decorative blobs -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <h4 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2">Nossas Soluções</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Áreas de Atuação</h2>
+                <p class="text-gray-600 text-lg">Desenvolvemos trilhas de aprendizagem personalizadas para a necessidade da sua instituição.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <!-- Card Educação -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden group">
+                    <div class="h-2 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Formação em Educação</h3>
+                        <p class="text-gray-600 mb-6">Capacitação continuada para redes municipais e escolas privadas.</p>
+                        
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-gray-700 text-sm">
+                                <i class="fas fa-check text-blue-500 mr-3"></i> Inclusão Escolar (Libras/Braille/Autismo)
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm">
+                                <i class="fas fa-check text-blue-500 mr-3"></i> Gestão Democrática e Clima Escolar
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm">
+                                <i class="fas fa-check text-blue-500 mr-3"></i> Metodologias Ativas e Tecnologias
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm">
+                                <i class="fas fa-check text-blue-500 mr-3"></i> Avaliação Externa e IDEB
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 px-8 py-4 border-t border-gray-100">
+                        <a href="#contato" class="text-blue-600 font-bold text-sm hover:text-blue-800 flex items-center gap-2">
+                            Solicitar Grade Curricular <i class="fas fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card Saúde -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden group">
+                    <div class="h-2 bg-gradient-to-r from-green-400 to-green-600"></div>
+                    <div class="p-8">
+                        <div class="w-14 h-14 bg-green-50 text-green-600 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:bg-green-600 group-hover:text-white transition">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800">Formação em Saúde</h3>
+                        <p class="text-gray-600 mb-6">Qualificação técnica e humanizada para equipes de saúde.</p>
+                        
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-gray-700 text-sm">
+                                <i class="fas fa-check text-green-500 mr-3"></i> Humanização do Atendimento no SUS
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm">
+                                <i class="fas fa-check text-green-500 mr-3"></i> Saúde Mental e Atenção Psicossocial
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm">
+                                <i class="fas fa-check text-green-500 mr-3"></i> Segurança do Paciente
+                            </li>
+                            <li class="flex items-center text-gray-700 text-sm">
+                                <i class="fas fa-check text-green-500 mr-3"></i> Agentes Comunitários de Saúde
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 px-8 py-4 border-t border-gray-100">
+                        <a href="#contato" class="text-green-600 font-bold text-sm hover:text-green-800 flex items-center gap-2">
+                            Solicitar Grade Curricular <i class="fas fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPE -->
+    <section id="equipe" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <h4 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2">Nosso Time</h4>
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Corpo Técnico Especializado</h2>
+                <p class="text-gray-600 text-lg">Profissionais com vasta experiência acadêmica e prática para garantir a excelência da formação.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Membro 1 -->
+                <div class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative overflow-hidden rounded-t-xl h-64">
+                        <img src="https://ui-avatars.com/api/?name=Ana+Souza&background=0D8ABC&color=fff&size=400" alt="Dra. Ana Souza" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-blue-900 bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-bold text-lg text-gray-900 mb-1">Dra. Ana Souza</h3>
+                        <p class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-3">Coord. Pedagógica</p>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
+                            Doutora em Educação pela UFAL. Especialista em gestão escolar e currículos inclusivos com 15 anos de experiência.
+                        </p>
+                        <div class="flex justify-center space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fab fa-linkedin text-lg"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-blue-600"><i class="fas fa-envelope text-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Membro 2 -->
+                <div class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative overflow-hidden rounded-t-xl h-64">
+                        <img src="https://ui-avatars.com/api/?name=Carlos+Lima&background=10B981&color=fff&size=400" alt="Me. Carlos Lima" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-green-900 bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-bold text-lg text-gray-900 mb-1">Me. Carlos Lima</h3>
+                        <p class="text-xs font-bold text-green-600 uppercase tracking-wider mb-3">Consultor Saúde</p>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
+                            Mestre em Saúde Pública. Experiência com humanização do atendimento no SUS e gestão de unidades básicas.
+                        </p>
+                        <div class="flex justify-center space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <a href="#" class="text-gray-400 hover:text-green-600"><i class="fab fa-linkedin text-lg"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-green-600"><i class="fas fa-envelope text-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Membro 3 -->
+                <div class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative overflow-hidden rounded-t-xl h-64">
+                        <img src="https://ui-avatars.com/api/?name=Mariana+Silva&background=8B5CF6&color=fff&size=400" alt="Esp. Mariana Silva" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-purple-900 bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-bold text-lg text-gray-900 mb-1">Esp. Mariana Silva</h3>
+                        <p class="text-xs font-bold text-purple-600 uppercase tracking-wider mb-3">Esp. Inclusão</p>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
+                            Pós-graduada em Libras e Educação Especial. Consultora de acessibilidade e adaptação curricular.
+                        </p>
+                        <div class="flex justify-center space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <a href="#" class="text-gray-400 hover:text-purple-600"><i class="fab fa-linkedin text-lg"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-purple-600"><i class="fas fa-envelope text-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Membro 4 -->
+                <div class="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                    <div class="relative overflow-hidden rounded-t-xl h-64">
+                        <img src="https://ui-avatars.com/api/?name=Roberto+Alves&background=F59E0B&color=fff&size=400" alt="Dr. Roberto Alves" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                        <div class="absolute inset-0 bg-yellow-900 bg-opacity-0 group-hover:bg-opacity-20 transition duration-300"></div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="font-bold text-lg text-gray-900 mb-1">Dr. Roberto Alves</h3>
+                        <p class="text-xs font-bold text-yellow-600 uppercase tracking-wider mb-3">Gestão de Projetos</p>
+                        <p class="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
+                            Doutor em Administração Pública. Especialista em licitações, contratos e captação de recursos.
+                        </p>
+                        <div class="flex justify-center space-x-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <a href="#" class="text-gray-400 hover:text-yellow-600"><i class="fab fa-linkedin text-lg"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-yellow-600"><i class="fas fa-envelope text-lg"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORMULÁRIO DE CONTATO (ADAPTADO PARA FORMSPREE) -->
+    <section id="contato" class="py-24 bg-blue-900 text-white relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h4 class="text-blue-300 font-bold uppercase tracking-widest text-sm mb-2">Fale Conosco</h4>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Vamos construir um projeto juntos?</h2>
+                    <p class="mb-10 text-blue-100 text-lg leading-relaxed">
+                        Preencha o formulário para solicitar um orçamento ou agendar uma reunião técnica. 
+                        Atendemos prefeituras, secretarias e instituições privadas em todo o Brasil.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center p-4 bg-blue-800 bg-opacity-50 rounded-lg">
+                            <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-xs text-blue-300 uppercase">E-mail para cotações</p>
+                                <p class="text-lg font-semibold">contato@edusaude.com.br</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center p-4 bg-blue-800 bg-opacity-50 rounded-lg">
+                            <div class="w-12 h-12 bg-blue-700 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-xs text-blue-300 uppercase">Sede Administrativa</p>
+                                <p class="text-lg font-semibold">Maceió, Alagoas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 md:p-10 text-gray-700 shadow-2xl">
+                    <!-- 
+                        ATENÇÃO: Substitua o "action" abaixo pelo seu endpoint do Formspree
+                        Exemplo: action="https://formspree.io/f/seu_codigo_aqui"
+                    -->
+                    <form action="https://formspree.io/f/SEU_CODIGO_FORMSPREE_AQUI" method="POST">
+                        <div class="mb-6">
+                            <label class="block text-sm font-bold mb-2 text-gray-700" for="nome">Nome Completo</label>
+                            <input class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-bold mb-2 text-gray-700" for="email">E-mail Institucional</label>
+                                <input class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" type="email" id="email" name="email" required placeholder="nome@org.gov.br">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold mb-2 text-gray-700" for="telefone">WhatsApp</label>
+                                <input class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" type="tel" id="telefone" name="telefone" placeholder="(82) 99999-9999">
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="block text-sm font-bold mb-2 text-gray-700" for="organizacao">Instituição / Secretaria</label>
+                            <input class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" type="text" id="organizacao" name="organizacao" required placeholder="Ex: Sec. de Educação de...">
+                        </div>
+
+                        <div class="mb-8">
+                            <label class="block text-sm font-bold mb-2 text-gray-700" for="mensagem">Como podemos ajudar?</label>
+                            <textarea class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition" id="mensagem" name="mensagem" rows="3" placeholder="Descreva brevemente sua necessidade de formação..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-lg hover:bg-blue-700 hover:shadow-lg transition duration-300 flex justify-center items-center gap-2">
+                            <span>Enviar Solicitação</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-blue-950 text-blue-200 py-12 border-t border-blue-900 mt-auto">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="text-2xl font-bold text-white mb-4">EduSaúde.</div>
+                    <p class="text-sm text-blue-300 max-w-sm leading-relaxed">
+                        Comprometidos com a melhoria da qualidade do ensino e da saúde pública através da formação continuada de excelência.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-4">Links Rápidos</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#sobre" class="hover:text-white transition">Quem Somos</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition">Nossos Serviços</a></li>
+                        <li><a href="#equipe" class="hover:text-white transition">Corpo Técnico</a></li>
+                        <li><a href="#contato" class="hover:text-white transition">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-white font-bold mb-4">Legal</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Política de Privacidade</a></li>
+                        <li><a href="#" class="hover:text-white transition">Termos de Uso</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-blue-900 text-center text-sm text-blue-400">
+                <p>&copy; 2025 EduSaúde Formações. Todos os direitos reservados.</p>
+                <p class="mt-1">CNPJ: 00.000.000/0001-00 • Maceió/AL</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
